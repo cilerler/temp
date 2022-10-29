@@ -1,0 +1,199 @@
+'reference http://plantuml.com/mindmap-diagram
+
+@startmindmap dotNET-architect
+
+' skinparam shadowing false
+' skinparam backgroundColor transparent
+' skinparam handwritten true
+' skinparam monochrome reverse
+' skinparam monochrome true
+' skinparam defaultFontName Courier
+
+!define _version %date("yyyy.MMdd.HHmmss")
+!define _company Cengiz Ilerler
+
+' header
+' Confidential
+' INTERNAL USE ONLY
+' end header
+
+title
+.NET Architect <&infinity>
+end title
+
+center footer
+
+<b>_company (c) %date("yyyy")</b>
+Version _version
+end footer
+
+* <&shield> Security <&infinity>
+
+** <&wrench> Operations
+
+*** Shell
+****_ [[https://www.gnu.org/software/bash/ Bash]]
+
+*** Source Control
+****_ [[https://github.com/ GitHub]] || [[https://azure.microsoft.com/en-us/products/devops/repos/ Azure Devops (Repos)]] || [[https://gitlab.com/ GitLab]]
+
+*** Package Management
+****_ [[https://github.com/features/packages GitHub (Packages)]] || [[https://azure.microsoft.com/en-us/products/devops/artifacts/ Azure DevOps (Artifacts)]] || [[https://gitlab.com/ GitLab]]
+
+*** Continues Integration
+****_ [[https://github.com/features/actions GitHub (Actions)]] || [[https://azure.microsoft.com/en-us/products/devops/pipelines/ Azure DevOps (Pipelines)]] || [[https://gitlab.com/ GitLab]]
+
+*** Container Orchestration
+****_ [[https://www.terraform.io/ Terraform]]
+*****_ [[https://fluxcd.io/ Flux]]
+******_ [[https://kubernetes.io/ Kubernetes]]
+*******_ [[https://www.docker.com/ Docker]]
+
+******* Configration Management
+********_ [[https://kustomize.io/ Kustomize]]
+********_ [[https://helm.sh/ Helm]]
+******* Log Shipper
+********_ [[https://grafana.com/docs/loki/latest/clients/promtail/ Promtail]]
+******* Reverse Proxy / Load Balancer
+********_ [[https://www.nginx.com/ NGINX]]
+******* Certificates
+********_ [[https://letsencrypt.org/ LetsEncrypt]]
+******* Traffic & Security Management
+********_ [[https://istio.io/ Istio]]
+******* Backup
+********_ [[https://velero.io/ Velero]]
+******* Virtual Private Network
+********_ [[https://pritunl.com/ Pritunl]]
+******* Cost Monitoring
+********_ [[https://www.kubecost.com/ KubeCost]]
+
+
+*** Object Storage
+****_ [[https://min.io/ MinIo]]
+
+*** Observability
+
+**** Logging
+*****_ [[https://grafana.com/oss/loki/ Loki]]
+
+**** Tracing
+*****_ [[https://grafana.com/oss/tempo/ Tempo]]
+
+**** Metrics
+*****_ [[https://prometheus.io/ Prometheus]]
+******_ [[https://grafana.com/oss/mimir/ Mimir]]
+
+**** Visualization
+*****_ [[https://grafana.com/ Grafana]]
+
+**** Alerting
+*****_ [[https://grafana.com/oss/oncall/ OnCall]]
+
+*** Secret Management
+****_ [[https://www.vaultproject.io/ Vault]]
+
+*** Distributed Application
+****_ [[https://dapr.io/ Dapr]]
+
+left side
+
+** <&code> Development
+
+*** Documentation
+****_ [[https://daringfireball.net/projects/markdown/ Markdown]]
+****_ [[https://plantuml.com/ PlantUml]]
+****_ DocFX
+
+*** Project Management
+****_ [[https://gitlab.com/ GitLab]] \n|| [[https://azure.microsoft.com/en-us/products/devops/boards/ Azure DevOps (Boards)]] <i>a.k.a. Visual Studio Team Services</i>]] \n|| [[https://github.com/ GitHub]] (Issues, Projects, Milestones, Wiki)
+
+*** Source Control
+****_ TFVC || [[https://git-scm.com/ Git]]
+
+*** Package Management
+****_ [[https://chocolatey.org/ Chocolatey]]
+****_ WinGet
+****_ NuGet
+****_ NPM
+
+*** Shell
+****_ PowerShell
+
+*** Container Infrastructure
+****_ [[https://www.docker.com/ Docker]] \n<i>(Docker-Compose)</i>
+*****_ [[https://https://minikube.sigs.k8s.io// Minikube]]
+*****_ [[https://kind.sigs.k8s.io/ Kind]]
+
+*** Database
+**** Relational
+*****_ [[https://www.postgresql.org/ PostgreSQL]] || Microsoft SQL
+
+**** NoSQL
+*****_ [[https://www.mongodb.com/ MongoDB]]
+
+*** Cache
+****_ [[https://redis.io/ Redis]]
+
+*** Message Queue
+****_ [[https://www.rabbitmq.com/ RabbitMQ]]
+
+***_ .NET (c#)
+****_ LINQ
+
+**** BackEnd
+*****_ MVC
+*****_ EntityFramework
+*****_ SignalR
+*****_ [[https://www.odata.org/ OData]] \n<i>(Open Data Protocol)</i>
+******_ RESTier
+*******_ [[https://swagger.io/ Swagger]] \n<i>(Open API Specification)</i>
+
+**** FrontEnd
+*****_ OData
+*****_ SignalR
+***** Web
+******_ Blazor
+*******_ TypeScript
+***** Mobile
+******_ Blazor
+******_ MAUI
+***** Templates
+******_ [[https://getbootstrap.com/ Bootstrap]]
+******_ [[https://material.io/ Material Design]]
+
+**** Test
+***** Unit Testing
+******_ MSTEST
+*******_ [[https://moq.github.io/moq4/ Moq]]
+***** Integration Testing
+******_ WebApplicationFactory
+*****_ [[https://azure.microsoft.com/en-us/products/devops/test-plans/ Azure DevOps (Test)]]
+
+
+**** Reverse Proxy
+*****_ Yarp
+
+*** Observability
+
+**** Logging
+*****_ ILogger
+
+**** Tracing
+*****_ [[https://opentelemetry.io/ OpenTelemetry]]
+
+**** Metrics
+*****_ [[https://opentelemetry.io/ OpenTelemetry]] \n<i>(as Prometheus format)</i>
+
+**** Visualization & Alerting
+*****_ [[https://grafana.com/ Grafana]]
+
+*** Secret Management
+****_ .NET Secret Management
+****_ [[https://www.vaultproject.io/ Vault]]
+
+*** Distributed Application
+****_ [[https://dapr.io/ Dapr]]
+
+@endmindmap
+
+@enduml
